@@ -10,25 +10,33 @@ int main(){
     while(t--){
         int n;
         cin >> n;
-        int cut_odd = 0;
-        int minor_odd = 2'000'000'000;
+
         long long int soma=0;
         vector<int> filds(n);
+        vector<int> odd_filds;
+        
         for(int i=0; i<n; i++){ 
             cin >> filds[i];
-            if(filds[i] %2 != 0){
-                cut_odd++;
-                minor_odd = min(minor_odd, filds[i]);
+            if(filds[i] % 2 != 0){
+                odd_filds.push_back(filds[i]);
+            } else {
+                soma += filds[i];
             }
-            soma += filds[i];
         }
-        if(cut_odd != 0){ 
-            if(cut_odd % 2 == 0){ soma -= minor_odd; }
+        
+        sort(odd_filds.begin(), odd_filds.end());
+        
+        if(odd_filds.size() != 0){ 
+            int id = floor(odd_filds.size()/2);
+            for(int i=id; i< odd_filds.size(); i++){
+                soma += odd_filds[i];
+            }
             cout << soma << '\n';
         }
-        else {
+        else { 
             cout << 0 << '\n';
         }
+
     }
 
     return 0;
