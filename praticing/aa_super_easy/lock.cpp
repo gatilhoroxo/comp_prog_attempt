@@ -1,4 +1,4 @@
-//UVA - 10550
+//UVa 10550 - Combination Lock
 //eh só criar uma fórmula, e eu não sei fazer isso
 #include <bits/stdc++.h>
 using namespace std;
