@@ -17,7 +17,7 @@ private:
             st[p] = (A[p1] <= A[p2]) ? p1 : p2;
         }
     }
-    int rmq(int p, int L, int R, int i, int j){ //O(log n)
+    int rmqPri(int p, int L, int R, int i, int j){ //O(log n)
         if(i>R || j < L) { return -1; }
         if(L >= i && R <= j) { return st[p]; }
 
@@ -33,5 +33,8 @@ public:
         n = (int)A.size();
         st.assign(4 * n, 0);
         build(1,0, n-1);
+    }
+    int rmq(int i, int j){
+        return rmqPri(1, 0, n-1, i, j);
     }
 };
