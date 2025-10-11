@@ -19,16 +19,15 @@ int main(){
         //20 == 180
         //10 == x(90)
         //1 == 9
-        int degree = 9;
-        int dif = (n[1] - n[0]); 
-        //dif = dif < 0 ? 40 + dif : dif;
-        int dife = (n[2] - n[1]);
-        dife = dife < 0 ? 40 + dife : dife;
-        int defer = (n[3] - n[2]);
-        //defer = defer < 0 ? 40 + defer : defer;
-        int ans = 3*360 + dif*(degree) + dife*(degree) + defer*degree;
+        int degree = 0;
+        degree += 2*360; 
+        degree+= ((n[0] - n[1] + 40)%40)*9;
+        degree +=360;
+        degree += ((n[2] - n[1] + 40)%40)*9;
+        
+        degree += ((n[2] - n[3] + 40)%40)*9;
 
-        if (!zeros) cout << ans << '\n';
+        if (!zeros) cout << degree << '\n';
     }
 
     return 0;
