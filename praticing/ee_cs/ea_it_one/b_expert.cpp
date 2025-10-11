@@ -1,6 +1,7 @@
 // UVa 01237 - Expert Enough *
 /*
- * 
+ * with help https://github.com/vmmc2/Competitive-Programming/blob/master/UVA%2001237%20-%20Expert%20Enough%3F.cpp 
+ * está recebendo resposta errada (??)
 */
 
 #include <bits/stdc++.h>
@@ -16,39 +17,52 @@ int main(){
     int t; cin >> t;
     while(t--){
         int d; cin >> d;
-        vector<pair<string, int>> vtlow(d), vthigh(d);
+        map<string, pair<int,int>> mapp;
         for(int i=0; i<d; i++){
             string s; int l, h;
             cin >> s >> l >> h;
-            vtlow[i] = make_pair(s, l);
-            vthigh[i] = make_pair(s, h);
+            if(mapp.find(s) == mapp.end()){
+                mapp[s] = {l,h};
+            } else {
+                if(l < mapp[s].first){
+                    mapp[s].first = l;
+                }
+                if(h > mapp[s].second){
+                    mapp[s].second = h;
+                }
+            }
         }
-        sort(vtlow.begin(), vtlow.end(), compMenor);
-        sort(vthigh.begin(), vthigh.end(), compMaior);
+
         int q; cin >> q;
-        string none = "UNDETERMINED\n";
+        string none = "UNDETERMINED";
         while(q--){
             int val; cin >> val;
-            if(val < vtlow[0].second || val > vthigh[0].second) {
-                cout << none;
-            } else {
-                pair<int,int> lastmin=make_pair(0,15<<27), 
-                            lastmax=make_pair(0,0);
-                for(int i=0; i<d; i++){
-                    int itmin = abs(val - vtlow[i].second);
-                    int itmax = abs(val - vthigh[i].second);
-                    if(itmin < lastmin.second) {
-                        lastmin = make_pair(i, itmin);
-                    }
-                    if(abs(val - vthigh[i].second) > lastmax.second){
-                        lastmax = make_pair(i, itmax);
-                    }
-                    if(lastmin.second >= lastmax.second){
-                        break;
+            vector<string> ans;
+            for(auto it : mapp){
+                if(val >= it.second.first && val <= it.second.second){
+                    ans.push_back(it.first);
+                }
+            }
+            if(ans.size() == 1) cout << ans[0];
+            else cout << none;
+            /*else {
+                int lastmin=15<<27, 
+                    lastmax=15<<27, 
+                    idx=0;
+                auto it = ans.begin();
+                for(auto i:ans){
+                    int abslow = abs(val - mapp[i].first),
+                        abshigh = abs(val - mapp[i].second);
+                    if(abslow < lastmin) {
+                        lastmin = abslow;
+
+                    } 
+                    if(abshigh < lastmax) {
+
                     }
                 }
-                cout << ((lastmin.second < lastmax.second) ? vtlow[lastmin.second].first : vthigh[lastmax.second].first) << '\n';
-            }
+            }*/
+            if(q) cout << '\n';
         }
     }
 
