@@ -1,25 +1,25 @@
  • Game (Card)
 
 1. UVa 00162 - Beggar My Neighbour (card game simulation; straightforward)
-2. UVa 00462 - Bridge Hand Evaluator * (simulation; card)
+    2. UVa 00462 - Bridge Hand Evaluator * (simulation; card)
 3. UVa 00555 - Bridge Hands (card game)
 4. UVa 10205 - Stack ’em Up (card game)
 5. UVa 10315 - Poker Hands (tedious problem)
-6. UVa 10646 - What is the Card? * (shuffle cards with some rule and
+    6. UVa 10646 - What is the Card? * (shuffle cards with some rule and
 then get certain card)
 7. UVa 11225 - Tarot scores (another card game)
 8. UVa 11678 - Card’s Exchange (actually just an array manipulation problem)
-9. UVa 12247 - Jollo * (interesting card game; simple, but requires good
+    9. UVa 12247 - Jollo * (interesting card game; simple, but requires good
 logic to get all test cases correct)
 
 
  • Game (Chess)
 
 1. UVa 00255 - Correct Move (check the validity of chess moves)
-2. UVa 00278 - Chess * (ad hoc, chess, closed form formula exists)
-3. UVa 00696 - How Many Knights * (ad hoc, chess)
+    2. UVa 00278 - Chess * (ad hoc, chess, closed form formula exists)
+    3. UVa 00696 - How Many Knights * (ad hoc, chess)
 4. UVa 10196 - Check The Check (ad hoc chess game, tedious)
-5. UVa 10284 - Chessboard in FEN * (FEN = Forsyth-Edwards Notation
+    5. UVa 10284 - Chessboard in FEN * (FEN = Forsyth-Edwards Notation
 is a standard notation for describing board positions in a chess game)
 6. UVa 10849 - Move the bishop (chess)
 7. UVa 11494 - Queen (ad hoc, chess)
@@ -28,13 +28,13 @@ is a standard notation for describing board positions in a chess game)
  • Game (Others), Easier
 
 1. UVa 00340 - Master-Mind Hints (determine strong and weak matches)
-2. UVa 00489 - Hangman Judge * (just do as asked)
+    2. UVa 00489 - Hangman Judge * (just do as asked)
 3. UVa 00947 - Master Mind Helper (similar to UVa 340)
-4. UVa 10189 - Minesweeper * (simulate Minesweeper, similar to UVa 10279)
+    4. UVa 10189 - Minesweeper * (simulate Minesweeper, similar to UVa 10279)
 5. UVa 10279 - Mine Sweeper (a 2D array helps, similar to UVa 10189)
 6. UVa 10409 - Die Game (just simulate the die movement)
 7. UVa 10530 - Guessing Game (use a 1D flag array)
-8. UVa 11459 - Snakes and Ladders * (simulate it, similar to UVa 647)
+    8. UVa 11459 - Snakes and Ladders * (simulate it, similar to UVa 647)
 9. UVa 12239 - Bingo (try all 902 pairs, see if all numbers in [0..N] are there)
 
 
@@ -47,30 +47,30 @@ is a standard notation for describing board positions in a chess game)
 5. UVa 00232 - Crossword Answers (complex array manipulation problem)
 6. UVa 00339 - SameGame Simulation (follow problem description)
 7. UVa 00379 - HI-Q (follow problem description)
-8. UVa 00584 - Bowling * (simulation, games, reading comprehension)
+    8. UVa 00584 - Bowling * (simulation, games, reading comprehension)
 9. UVa 00647 - Chutes and Ladders (childhood board game, also see UVa 11459)
 10. UVa 10363 - Tic Tac Toe (check validity of Tic Tac Toe game, tricky)
-11. UVa 10443 - Rock, Scissors, Paper * (2D arrays manipulation)
-12. UVa 10813 - Traditional BINGO * (follow the problem description)
+    11. UVa 10443 - Rock, Scissors, Paper * (2D arrays manipulation)
+    12. UVa 10813 - Traditional BINGO * (follow the problem description)
 13. UVa 10903 - Rock-Paper-Scissors ... (count win+losses, output win average)
 
 
  • Palindrome
 
 1. UVa 00353 - Pesky Palindromes (brute force all substring)
-2. UVa 00401 - Palindromes * (simple palindrome check)
+    2. UVa 00401 - Palindromes * (simple palindrome check)
 3. UVa 10018 - Reverse and Add (ad hoc, math, palindrome check)
-4. UVa 10945 - Mother Bear * (palindrome)
-5. UVa 11221 - Magic Square Palindrome * (we deal with a matrix)
+    4. UVa 10945 - Mother Bear * (palindrome)
+    5. UVa 11221 - Magic Square Palindrome * (we deal with a matrix)
 6. UVa 11309 - Counting Chaos (palindrome check)
 
 
  • Anagram
 
 1. UVa 00148 - Anagram Checker (uses backtracking)
-2. UVa 00156 - Ananagram * (easier with algorithm::sort)
-3. UVa 00195 - Anagram * (easier with algorithm::next permutation)
-4. UVa 00454 - Anagrams * (anagram)
+    2. UVa 00156 - Ananagram * (easier with algorithm::sort)
+    3. UVa 00195 - Anagram * (easier with algorithm::next permutation)
+    4. UVa 00454 - Anagrams * (anagram)
 5. UVa 00630 - Anagrams (II) (ad hoc, string)
 6. UVa 00642 - Word Amalgamation (go through the given small dictionary for
 the list of possible anagrams)
@@ -79,16 +79,16 @@ the list of possible anagrams)
 
  • Interesting Real Life Problems, Easier
 
-1. UVa 00161 - Traffic Lights * (this is a typical situation on the road)
+    1. UVa 00161 - Traffic Lights * (this is a typical situation on the road)
 2. UVa 00187 - Transaction Processing (an accounting problem)
 3. UVa 00362 - 18,000 Seconds Remaining (typical file download situation)
-4. UVa 00637 - Booklet Printing * (application in printer driver software)
+    4. UVa 00637 - Booklet Printing * (application in printer driver software)
 5. UVa 00857 - Quantiser (MIDI, application in computer music)
 6. UVa 10082 - WERTYU (this typographical error happens to us sometimes)
 7. UVa 10191 - Longest Nap (you may want to apply this to your own schedule)
 8. UVa 10528 - Major Scales (music knowledge is in the problem description)
 9. UVa 10554 - Calories from Fat (are you concerned with your weights?)
-10. UVa 10812 - Beat the Spread * (be careful with boundary cases!)
+    10. UVa 10812 - Beat the Spread * (be careful with boundary cases!)
 11. UVa 11530 - SMS Typing (handphone users encounter this problem everyday)
 12. UVa 11945 - Financial Management (a bit output formatting)
 13. UVa 11984 - A Change in Thermal Unit (F◦ to C◦ conversion and vice versa)
@@ -107,7 +107,7 @@ subtract (-), divide (/), and negate (@), tedious)
 5. UVa 00349 - Transferable Voting (II) (simulation)
 6. UVa 00381 - Making the Grade (simulation)
 7. UVa 00405 - Message Routing (simulation)
-8. UVa 00556 - Amazing * (simulation)
+    8. UVa 00556 - Amazing * (simulation)
 9. UVa 00603 - Parking Lot (simulate the required process)
 10. UVa 00830 - Shark (very hard to get AC, one minor error = WA)
 11. UVa 00945 - Loading a Cargo Ship (simulate the given cargo loading process)
@@ -119,7 +119,7 @@ subtract (-), divide (/), and negate (@), tedious)
 17. UVa 10961 - Chasing After Don Giovanni (tedious simulation)
 18. UVa 11140 - Little Ali’s Little Brother (ad hoc)
 19. UVa 11717 - Energy Saving Micro... (tricky simulation)
-20. UVa 12060 - All Integer Average * (LA 3012, Dhaka04, output format)
-21. UVa 12085 - Mobile Casanova * (LA 2189, Dhaka06, watch out for PE)
+    20. UVa 12060 - All Integer Average * (LA 3012, Dhaka04, output format)
+    21. UVa 12085 - Mobile Casanova * (LA 2189, Dhaka06, watch out for PE)
 22. UVa 12608 - Garbage Collection (simulation with several corner cases)
 
