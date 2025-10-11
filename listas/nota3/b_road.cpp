@@ -1,3 +1,4 @@
+//nao entendi o problema
 #include <bits/stdc++.h>
 using namespace std;
 using vi = vector<int>;
@@ -43,7 +44,18 @@ int main(){
     ios_base::sync_with_stdio(0);
     cin.tie(0);
 
+    int n, m;  
+    cin >> n >> m;
+    vector<int> vt(n);
+    for(int i=0; i<n; i++) vt[i] = i+1;
     
+    
+    while(m--){
+        int a, b;
+        cin >> a >> b;
+        int numComp, sizeCompGG;
+
+    }
 
     return 0;
 }
