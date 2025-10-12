@@ -1,15 +1,4 @@
-• Iterative (One Loop, Linear Scan)
-
-1. UVa 00102 - Ecological Bin Packing (just try all 6 possible combinations)
-2. UVa 00256 - Quirksome Squares (brute force, math, pre-calculate-able)
-    3. UVa 00927 - Integer Sequence from ... * (use sum of arithmetic series)
-    4. UVa 01237 - Expert Enough * (LA 4142, Jakarta08, input is small)
-    5. UVa 10976 - Fractions Again ? * (total solutions is asked upfront; therefore do brute force twice)
-6. UVa 11001 - Necklace (brute force math, maximize function)
-7. UVa 11078 - Open Credit System (one linear scan)
-
-
-• Iterative (Two Nested Loops)
+• CS Iterative (Two Nested Loops)
 
 1. UVa 00105 - The Skyline Problem (height map, sweep left-right)
 2. UVa 00347 - Run, Run, Runaround ... (simulate the process)
@@ -27,7 +16,7 @@ the larger test data generated in the solution of UVa 11129)
 12. UVa 12583 - Memory Overflow (2 nested loops; be careful of overcounting)
 
 
-• Iterative (Three Or More Nested Loops, Easier)
+• CS Iterative (Three Or More Nested Loops, Easier)
 
 1. UVa 00154 - Recycling (3 nested loops)
 2. UVa 00188 - Perfect Hash (3 nested loops, until the answer is found)
@@ -45,7 +34,7 @@ the larger test data generated in the solution of UVa 11129)
 14. UVa 12515 - Movie Police (3 nested loops)
 
 
-• Iterative (Three-or-More Nested Loops, Harder)
+• CS Iterative (Three-or-More Nested Loops, Harder)
 
 1. UVa 00253 - Cube painting (try all, similar problem in UVa 11959)
 2. UVa 00296 - Safebreaker (try all 10000 possible codes, 4 nested loops, use similar solution as ‘Master-Mind’ game)
@@ -69,9 +58,9 @@ a, b, c; check if you have 949 lines of output)
 Also see Mathematical Simulation in Section 5.2
 
 
-• Iterative (Fancy Techniques)
+• CS Iterative (Fancy Techniques)
 
-1. UVa 00140 - Bandwidth (max n is just 8, use next permutation; the algorithm inside next permutation is iterative)
+1. UVa 00140 - Bandwidth (max n is just 8, use next permutation; the algorithm inside next permutation is CS iterative)
 2. UVa 00234 - Switching Channels (use next permutation, simulation)
 3. UVa 00435 - Block Voting (only 220 possible coalition combinations)
 4. UVa 00639 - Don’t Get Rooked (generate 216 combinations and prune)
@@ -92,7 +81,7 @@ also use DP + bitmask, see Section 8.3.1, but it is overkill)
     15. UVa 12455 - Bars * (discussed in this section)
 
 
-• Recursive Backtracking (Easy)
+• CS Recursive Backtracking (Easy)
 
 1. UVa 00167 - The Sultan Successor (8-queens chess problem)
 2. UVa 00380 - Call Forwarding (simple backtracking, but we have to work with
@@ -110,7 +99,7 @@ strings, see Section 6.2)
     13. UVa 11085 - Back to the 8-Queens * (see UVa 750, pre-calculation)
 
 
-• Recursive Backtracking (Medium)
+• CS Recursive Backtracking (Medium)
 
 1. UVa 00222 - Budget Travel (looks like a DP problem, but the state cannot
 be memoized as ‘tank’ is floating-point; fortunately, the input is not large)
@@ -133,7 +122,7 @@ be memoized as ‘tank’ is floating-point; fortunately, the input is not large
 18. UVa 11961 - DNA (there are at most 410 possible DNA strings; moreover, the mutation power is at most K ≤ 5 so the search space is much smaller; sort the output and then remove duplicates)
 
 
-• Recursive Backtracking (Harder)
+• CS Recursive Backtracking (Harder)
 
 1. UVa 00129 - Krypton Factor (backtracking, string processing check, a bit of output formatting)
 2. UVa 00165 - Stamps (requires some DP too; can be pre-calculated)
