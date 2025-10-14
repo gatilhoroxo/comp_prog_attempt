@@ -1,0 +1,33 @@
+• Graph Data Structures Problems
+
+    1. UVa 00599 - The Forrest for the Trees * (v−e = number of connected components, keep a bitset of size 26 to count the number of vertices that have some edge. Note: Also solvable with Union-Find)
+    2. UVa 10895 - Matrix Transpose * (transpose adjacency list)
+3. UVa 10928 - My Dear Neighbours (counting out degrees)
+4. UVa 11550 - Demanding Dilemma (graph representation, incidence matrix)
+    5. UVa 11991 - Easy Problem from ... * (use the idea of an Adj List) Also see: More graph problems in Chapter 4
+
+
+• Union-Find Disjoint Sets
+
+    1. UVa 00793 - Network Connections * (trivial; application of disjoint sets)
+2. UVa 01197 - The Suspects (LA 2817, Kaohsiung03, Connected Components)
+3. UVa 10158 - War (advanced usage of disjoint sets with a nice twist; memorize list of enemies)
+4. UVa 10227 - Forests (merge two disjoint sets if they are consistent)
+    5. UVa 10507 - Waking up brain * (disjoint sets simplifies this problem)
+6. UVa 10583 - Ubiquitous Religions (count disjoint sets after all unions)
+7. UVa 10608 - Friends (find the set with the largest element)
+8. UVa 10685 - Nature (find the set with the largest element)
+    9. UVa 11503 - Virtual Friends * (maintain set attribute (size) in rep item)
+10. UVa 11690 - Money Matters (check if total money from each member is 0)
+
+
+• Tree-related Data Structures
+
+1. UVa 00297 - Quadtrees (simple quadtree problem)
+2. UVa 01232 - SKYLINE (LA 4108, Singapore07, a simple problem if input size is small; but since n ≤ 100000, we have to use a Segment Tree; note that this problem is not about RSQ/RMQ)
+    3. UVa 11235 - Frequent Values * (range maximum query)
+4. UVa 11297 - Census (Quad Tree with updates or use 2D segment tree)
+5. UVa 11350 - Stern-Brocot Tree (simple tree data structure question)
+    6. UVa 11402 - Ahoy, Pirates * (segment tree with lazy updates)
+7. UVa 12086 - Potentiometers (LA 2191, Dhaka06; pure dynamic range sum query problem; solvable with Fenwick Tree or Segment Tree)
+    8. UVa 12532 - Interval Product * (clever usage of Fenwick/Segment Tree) Also see: DS as part of the solution of harder problems in Chapter 8

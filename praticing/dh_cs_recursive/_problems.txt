@@ -1,0 +1,60 @@
+• CS Recursive Backtracking (Easy)
+
+1. UVa 00167 - The Sultan Successor (8-queens chess problem)
+2. UVa 00380 - Call Forwarding (simple backtracking, but we have to work with
+strings, see Section 6.2)
+3. UVa 00539 - The Settlers ... (longest simple path in a small general graph)
+    4. UVa 00624 - CD * (input size is small, backtracking is enough)
+5. UVa 00628 - Passwords (backtracking, follow the rules in description)
+6. UVa 00677 - All Walks of length “n” ... (print all solutions with backtracking)
+7. UVa 00729 - The Hamming Distance ... (generate all possible bit strings)
+8. UVa 00750 - 8 Queens Chess Problem (discussed in this section with sample source code)
+9. UVa 10276 - Hanoi Tower Troubles Again (insert a number one by one)
+10. UVa 10344 - 23 Out of 5 (rearrange the 5 operands and the 3 operators)
+11. UVa 10452 - Marcus, help (at each pos, Indy can go forth/left/right; try all)
+    12. UVa 10576 - Y2K Accounting Bug * (generate all, prune, take max)
+    13. UVa 11085 - Back to the 8-Queens * (see UVa 750, pre-calculation)
+
+
+• CS Recursive Backtracking (Medium)
+
+1. UVa 00222 - Budget Travel (looks like a DP problem, but the state cannot
+be memoized as ‘tank’ is floating-point; fortunately, the input is not large)
+2. UVa 00301 - Transportation (222 with pruning is possible)
+3. UVa 00331 - Mapping the Swaps (n ≤ 5...)
+4. UVa 00487 - Boggle Blitz (use map to store the generated words)
+    5. UVa 00524 - Prime Ring Problem * (also see Section 5.5.1)
+6. UVa 00571 - Jugs (solution can be suboptimal, add flag to avoid cycling)
+    7. UVa 00574 - Sum It Up * (print all solutions with backtracking)
+8. UVa 00598 - Bundling Newspaper (print all solutions with backtracking)
+9. UVa 00775 - Hamiltonian Cycle (backtracking suffices because the search space cannot be that big; in a dense graph, it is more likely to have a Hamiltonian cycle, so we can prune early; we do NOT have to find the best one like in TSP problem)
+10. UVa 10001 - Garden of Eden (the upperbound of 232 is scary but with efficient pruning, we can pass the time limit as the test case is not extreme)
+11. UVa 10063 - Knuth’s Permutation (do as asked)
+12. UVa 10460 - Find the Permuted String (similar nature with UVa 10063)
+13. UVa 10475 - Help the Leaders (generate and prune; try all)
+    14. UVa 10503 - The dominoes solitaire * (max 13 spaces only)
+15. UVa 10506 - Ouroboros (any valid solution is AC; generate all possible next digit (up to base 10/digit [0..9]); check if it is still a valid Ouroboros sequence)
+16. UVa 10950 - Bad Code (sort the input; run backtracking; the output should be sorted; only display the first 100 sorted output)
+17. UVa 11201 - The Problem with the ... (backtracking involving strings)
+18. UVa 11961 - DNA (there are at most 410 possible DNA strings; moreover, the mutation power is at most K ≤ 5 so the search space is much smaller; sort the output and then remove duplicates)
+
+
+• CS Recursive Backtracking (Harder)
+
+1. UVa 00129 - Krypton Factor (backtracking, string processing check, a bit of output formatting)
+2. UVa 00165 - Stamps (requires some DP too; can be pre-calculated)
+    3. UVa 00193 - Graph Coloring * (Max Independent Set, input is small)
+4. UVa 00208 - Firetruck (backtracking with some pruning)
+    5. UVa 00416 - LED Test * (backtrack, try all)
+6. UVa 00433 - Bank (Not Quite O.C.R.) (similar to UVa 416)
+7. UVa 00565 - Pizza Anyone? (backtracking with lots of pruning)
+8. UVa 00861 - Little Bishops (backtracking with pruning as in 8-queens recursive backtracking solution; then pre-calculate the results)
+9. UVa 00868 - Numerical maze (try row 1 to N; 4 ways; some constraints)
+    10. UVa 01262 - Password * (LA 4845, Daejeon10, sort the columns in the
+two 6×5 grids first so that we can process common passwords in lexicographic
+order; backtracking; important: skip two similar passwords)
+11. UVa 10094 - Place the Guards (this problem is like the n-queens chess problem, but must find/use the pattern!)
+12. UVa 10128 - Queue (backtracking with pruning; try up to all N! (13!) permutations that satisfy the requirement; then pre-calculate the results)
+13. UVa 10582 - ASCII Labyrinth (simplify complex input first; then backtrack)
+14. UVa 11090 - Going in Cycle (minimum mean weight cycle problem; solvable with backtracking with important pruning when current running mean is greater than the best found mean weight cycle cost)
+

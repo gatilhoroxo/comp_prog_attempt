@@ -1,0 +1,21 @@
+• CS Iterative (Fancy Techniques)
+
+1. UVa 00140 - Bandwidth (max n is just 8, use next permutation; the algorithm inside next permutation is CS iterative)
+2. UVa 00234 - Switching Channels (use next permutation, simulation)
+3. UVa 00435 - Block Voting (only 220 possible coalition combinations)
+4. UVa 00639 - Don’t Get Rooked (generate 216 combinations and prune)
+    5. UVa 01047 - Zones * (LA 3278, WorldFinals Shanghai05, notice that
+n ≤ 20 so that we can try all possible subsets of towers to be taken; then
+apply inclusion-exclusion principle to avoid overcounting)
+6. UVa 01064 - Network (LA 3808, WorldFinals Tokyo07, permutation of up
+to 5 messages, simulation, mind the word ‘consecutive’)
+7. UVa 11205 - The Broken Pedometer (try all 215 bitmask)
+8. UVa 11412 - Dig the Holes (next permutation, find one possibility from 6!)
+    9. UVa 11553 - Grid Game * (solve by trying all n! permutations; you can
+also use DP + bitmask, see Section 8.3.1, but it is overkill)
+10. UVa 11742 - Social Constraints (discussed in this section)
+11. UVa 12249 - Overlapping Scenes (LA 4994, KualaLumpur10, try all permutations, a bit of string matching)
+12. UVa 12346 - Water Gate Management (LA 5723, Phuket11, try all 2n combinations, pick the best one)
+13. UVa 12348 - Fun Coloring (LA 5725, Phuket11, try all 2n combinations)
+14. UVa 12406 - Help Dexter (try all 2p possible bitmasks, change ‘0’s to ‘2’s)
+    15. UVa 12455 - Bars * (discussed in this section)

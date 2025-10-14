@@ -9,7 +9,6 @@ int main(){
     cin >> a >> b;
 
     int buff= a & b;
-    bool check=0;
     if(buff == 0){ cout << "true\n"; } 
     else { cout << "false\n"; }
 
