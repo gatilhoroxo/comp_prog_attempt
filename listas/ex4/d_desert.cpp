@@ -19,67 +19,37 @@ int main(){
         cin>>inicio>>start>>start>>consume; 
         if(inicio==0 && consume==0){ break; }
         vector<pair<string, int>> vt(50);
-        float fuel=30;
-        float regra=0;
-        int leak=0;
-        int distance, antigo; string type;
-        cin >> distance >> type;
-        do{
+        float soma=0, max=0;
+        int leak=0, loc=0, loc_atual=0;
+        int distance=0; 
+        string type;
+        while(true){
+            cin >> loc >> type;
+
+            distance = abs(loc - loc_atual);
+            loc_atual= loc;
+            if(distance!=0) soma+=((consume)*distance/100);
+            if(leak != 0) soma+=(distance*leak);
+
             if(type == "Fuel"){
                 cin >> type >> consume;
             } else if (type == "Gas") {
                 cin >> type;
-                fuel=30;
+                if(soma>max) { max = soma; }
+                soma = 0;
             } else if(type == "Leak"){
                 leak++;
             } else if(type == "Mechanic"){
                 leak=0;
             } else if(type == "Goal"){
-                regra+=((consume + leak)*distance/100);
-                fuel-=(regra);
+                if(soma > max) max = soma;
                 break;
             }
-            //processar o evento
-            if(distance!=0) regra+=((consume)*distance/100);
-            if(leak != 0) regra+=(distance*leak);
-            fuel-=(regra);
-            cin >> distance >> type;
-        }while(type!="Goal");
+        } 
 
-        printf("%0.3f\n", regra);
+        printf("%0.3f\n", soma);
 
     }
 
     return 0;
-}
-
-int albe_main(){
-    vector<tuple<int,string,int>> events;
-    float rate, licks=0, sum=0, max=0, start=0;
-    while(true){
-        string event;
-        //decodifica entrada 
-        int loc_atual;
-        string event_type;
-        int buff;
-        int distance; //onde ta agr - inicio
-        //muda inicio 
-        if(distance != 0){
-            sum+=((rate*distance)/100);
-        }
-        if(licks != 0) {
-            sum += licks*distance;
-        }
-        
-        if(event_type == "Fuel"){
-            if(loc_atual == 0 && buff == 0){
-                break;
-            }
-            rate = buff;
-        } else if (event_type == "Gas"){
-            if(sum>max){ max = sum; }
-            printf("%.3f\n",max);
-            licks=0,sum=0,start = 0;
-        }
-    }
 }
