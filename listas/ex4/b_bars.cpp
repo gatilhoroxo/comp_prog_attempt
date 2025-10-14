@@ -1,5 +1,5 @@
 //UVA 12455 - Bars
-//nao terminei (falta o caso 2)
+//ok
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -12,17 +12,24 @@ int main(){
         int n, p; cin >> n >> p;
         vector<int> vt(p);
         for(auto &i: vt) cin >> i;
-        sort(vt.begin(), vt.end(), greater<int>());
-        for(auto &i: vt) cout << i << ' '; cout << '\n';
+        //sort(vt.begin(), vt.end(), greater<int>());
+        //for(auto &i: vt) cout << i << ' '; cout << '\n';
         int buff = n;
-        for(auto i: vt) {
-            buff-=i;
-            if(buff<0) { buff+=i; break;}
-            else if(buff==0) { break; }
+        bool ok = false;
+
+        for(int wt=0; wt< (1 << p) && !ok; wt++){
+            buff=0;
+            for(int j=0; j<p; j++){
+                if(wt & (1 << j)){
+                    buff+=vt[j];
+                    if(buff>n) break;
+                }
+            }
+            if(buff == n) ok = true;
         }
-        if(buff == 0) cout << "YES";
-        else cout << "NO";
-        cout << '\n';
+
+        if(ok) cout << "YES\n";
+        else cout << "NO\n";
     }
 
     return (0);
