@@ -1,5 +1,8 @@
 //UVA 11742 - Social Constraints  
 //site caiu
+/*
+problema de permutação e encontrar a quantidade válida para certas restrições
+*/
 #include <bits/stdc++.h>
 using namespace std;
 

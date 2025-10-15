@@ -14,40 +14,38 @@ int main(){
         //Mechanic : fix all the leaks
     //Goal : reached to the end
     while(true){
-        //caso 1
-        int inicio, consume=0; string start; 
-        cin>>inicio>>start>>start>>consume; 
-        if(inicio==0 && consume==0){ break; }
+        int inicio, fuel_consume=0; string start; 
+        cin>>inicio>>start>>start>>fuel_consume; 
+        if(inicio==0 && fuel_consume==0){ break; }
         vector<pair<string, int>> vt(50);
-        float soma=0, max=0;
-        int leak=0, loc=0, loc_atual=0;
-        int distance=0; 
-        string type;
+        float max_fuel=0, fuel_used=0;
+        int leak=0, last_loc=0, loc_atual=0;
+        int dist=0; 
+        string type_event;
         while(true){
-            cin >> loc >> type;
+            cin >> loc_atual >> type_event;
 
-            distance = abs(loc - loc_atual);
-            loc_atual= loc;
-            if(distance!=0) soma+=((consume)*distance/100);
-            if(leak != 0) soma+=(distance*leak);
+            dist = abs(last_loc - loc_atual);
+            last_loc = loc_atual;
+            if(dist!=0) fuel_used+=((fuel_consume)*dist/100) + (dist*leak);
 
-            if(type == "Fuel"){
-                cin >> type >> consume;
-            } else if (type == "Gas") {
-                cin >> type;
-                if(soma>max) { max = soma; }
-                soma = 0;
-            } else if(type == "Leak"){
+            if(type_event == "Fuel"){
+                cin >> type_event >> fuel_consume;
+            } else if(type_event == "Leak"){
                 leak++;
-            } else if(type == "Mechanic"){
+            } else if(type_event == "Mechanic"){
                 leak=0;
-            } else if(type == "Goal"){
-                if(soma > max) max = soma;
+            } else if (type_event == "Gas") {
+                cin >> type_event;
+                max_fuel = max(fuel_used, max_fuel); 
+                fuel_used = 0;
+            } else if(type_event == "Goal"){
+                max_fuel = max(fuel_used, max_fuel);
                 break;
             }
         } 
 
-        printf("%0.3f\n", soma);
+        printf("%0.3f\n", max_fuel);
 
     }
 
