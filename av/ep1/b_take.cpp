@@ -1,7 +1,7 @@
-//no
+//travei nesse
+//queria usar a list para poder resolver
 #include <bits/stdc++.h>
 using namespace std;
-
 
 int main(){
     ios_base::sync_with_stdio(0);
@@ -10,22 +10,29 @@ int main(){
     string linha;
     cin >> linha;
 
-    list<char> ans;
+    /*com uma string auxiliar para poder
+      ir aos poucos nas partes da string
+      e nas suas subpartes que podem formar
+      o ABC
+    */
+    string ans;
 
-    while(true){
-        int id = linha.find("ABC");
-        linha.erase(id);
-        linha.erase(id+1);
-        linha.erase(id+2);
-        
-
+    int id=0;
+    for(int i=0; i<linha.size(); i++){
+        //insere character por character
+        ans.push_back(linha[i]);
+        id++;
+        //se o tamanho da string for maior ou igual a 3
+        //e também contem a substring ABC 
+        //tira ela logo 
+        if(ans.size() >= 3 && ans.substr(id-3, 3) == "ABC"){
+            ans.erase(id-3, 3);
+            id -= 3;
+        }
     }
 
-    for(char c: ans){
-        cout << c;
-    }
-    cout << '\n';
-    
+    //
+    cout << ans << '\n';
 
     return 0;
 }

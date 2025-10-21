@@ -1,6 +1,7 @@
+//Sum of Two Values CSES - 1640
+//
 #include <bits/stdc++.h>
 using namespace std;
-
 
 int main(){
     ios_base::sync_with_stdio(0);
@@ -10,29 +11,24 @@ int main(){
     {
     
     int n, x; cin >> n >> x;
-    multiset<int> ms;
-    map<int,int> maping;
-    for(int i=0;i<n;i++) { 
-        int num; cin >> num; 
-        ms.insert(num); 
-        maping[num] = i+1;
-    }
     int finded=0;
     int first=0;
-    for(auto value: ms){
-        finded = (*ms.find((x-value)));
-        if(finded+value == x){
-            first = value;
-            break;
+    map<int,int> mapa;
+    for(int i=0;i<n;i++) { 
+        int num; cin >> num; 
+        if(num<x){
+            if(mapa[x-num] == 0){ 
+                mapa[num] = i+1; 
+            } else {
+                cout << mapa[x-num] << ' ' << i+1 <<'\n';
+                finded = true;
+                break;
+            }
         }
     }
 
-    if(finded && first){
-        cout << maping[finded] << maping[first] << '\n'; 
-    }
-    else {
-        cout << "IMPOSSIBLE\n";
-    }
+    if(!finded){ cout << "IMPOSSIBLE\n"; }
+
     }
     return 0;
 }

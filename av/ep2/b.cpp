@@ -1,3 +1,5 @@
+//Boxes Packing CodeForces - 903C
+//travei nesse no meio
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -21,24 +23,19 @@ int main(){
     //caixa i menor que caixa j
     //i nao pode por dentro de outra caixa
     //j nao  pode conter outras caixas    
-    int top = pq.top(); pq.pop();
-    int caixasP=0;
-    int ans=0;
-    int i=0;
-    while(!pq.empty()){
-        i++;
-        if(pq.top() > top){
-            if(caixasP == 0) {
-                top = pq.top();
-            } else {
-                caixasP--; 
-                pq.pop(); 
-            }
-        }
-        else if(pq.top() == top) {
-            ans++;
-            caixasP++;
-            pq.pop();
+    int ans=n;
+    vector<int> vt;
+    while(true){
+        int lasttop = pq.top(); pq.pop();
+        if(pq.empty()) break;
+        else if(pq.top() > lasttop) { ans--; } 
+        else if(pq.top() == lasttop) {
+            vt.push_back(lasttop);
+            if(!vt.empty()) 
+                if(vt.front() < pq.top()){
+                    vt.erase(vt.begin());
+                    ans--;
+                }
         } 
     }
     

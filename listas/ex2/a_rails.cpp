@@ -9,6 +9,7 @@ void solve(vector<int>& numbers){
     bool found = false;
     stack<int> s;
 
+    int i=0;
     while(true) {
         if(s.empty()) n;
         else if(numbers[n-1] == s.top()) {

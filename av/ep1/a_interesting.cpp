@@ -20,8 +20,6 @@ int main(){
     for(int i=0; i<q; i++){
         int m; //dinheiro por dia
         cin >> m;
-
-        
         //----------
         //binary search
         if(m >= x[n-1]){
