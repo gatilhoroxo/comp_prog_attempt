@@ -1,0 +1,9 @@
+• CS Iterative (One Loop, Linear Scan)
+
+1. UVa 00102 - Ecological Bin Packing (just try all 6 possible combinations)
+2. UVa 00256 - Quirksome Squares (brute force, math, pre-calculate-able)
+    3. UVa 00927 - Integer Sequence from ... * (use sum of arithmetic series)
+    4. UVa 01237 - Expert Enough * (LA 4142, Jakarta08, input is small)
+    5. UVa 10976 - Fractions Again ? * (total solutions is asked upfront; therefore do brute force twice)
+6. UVa 11001 - Necklace (brute force math, maximize function)
+7. UVa 11078 - Open Credit System (one linear scan)

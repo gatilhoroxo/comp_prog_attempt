@@ -1,0 +1,107 @@
+• Max 1D Range Sum
+
+1. UVa 00507 - Jill Rides Again (standard problem)
+    2. UVa 00787 - Maximum Sub ... * (max 1D range product, be careful with 0, use Java BigInteger, see Section 5.3)
+    3. UVa 10684 - The Jackpot * (standard problem; easily solvable with the given sample source code)
+    4. UVa 10755 - Garbage Heap * (combination of max 2D range sum in two of the three dimensions—see below—and max 1D range sum using Kadane’s algorithm on the third dimension)
+See more examples in Section 8.4.
+
+
+• Max 2D Range Sum
+
+    1. UVa 00108 - Maximum Sum * (discussed in this section with sample source code)
+2. UVa 00836 - Largest Submatrix (convert ‘0’ to -INF)
+3. UVa 00983 - Localized Summing for ... (max 2D range sum, get submatrix)
+4. UVa 10074 - Take the Land (standard problem)
+5. UVa 10667 - Largest Block (standard problem)
+    6. UVa 10827 - Maximum Sum on ... * (copy n × n matrix into n × 2n matrix; then this problem becomes a standard problem again)
+    7. UVa 11951 - Area * (use long long; max 2D range sum; prune the search space whenever possible)
+
+
+• Longest Increasing Subsequence (LIS)
+
+1. UVa 00111 - History Grading (be careful of the ranking system)
+2. UVa 00231 - Testing the Catcher (straight-forward)
+3. UVa 00437 - The Tower of Babylon (can be modeled as LIS)
+    4. UVa 00481 - What Goes Up? * (use O(n log k) LIS; print solution; see our sample source code)
+5. UVa 00497 - Strategic Defense Initiative (solution must be printed)
+6. UVa 01196 - Tiling Up Blocks (LA 2815, Kaohsiung03; sort all the blocks in increasing L[i], then we get the classical LIS problem)
+7. UVa 10131 - Is Bigger Smarter? (sort elephants based on decreasing IQ; LIS on increasing weight)
+8. UVa 10534 - Wavio Sequence (must use O(n log k) LIS twice)
+9. UVa 11368 - Nested Dolls (sort in one dimension, LIS in the other)
+    10. UVa 11456 - Trainsorting * (max(LIS(i) + LDS(i) - 1), ∀i ∈ [0 ...n-1])
+    11. UVa 11790 - Murcia’s Skyline * (combination of LIS+LDS, weighted)
+
+
+• 0-1 Knapsack (Subset Sum)
+
+1. UVa 00562 - Dividing Coins (use a one dimensional table)
+2. UVa 00990 - Diving For Gold (print the solution)
+3. UVa 01213 - Sum of Different Primes (LA 3619, Yokohama06, extension of 0-1 Knapsack, use three parameters: (id, remN, remK) on top of (id, remN))
+4. UVa 10130 - SuperSale (discussed in this section with sample source code)
+5. UVa 10261 - Ferry Loading (s: current car, left, right)
+    6. UVa 10616 - Divisible Group Sum * (input can be -ve, use long long)
+7. UVa 10664 - Luggage (Subset Sum)
+    8. UVa 10819 - Trouble of 13-Dots * (0-1 knapsack with ‘credit card’ twist!)
+9. UVa 11003 - Boxes (try all max weight from 0 to max(weight[i]+capacity[i]), ∀i ∈ [0..n-1]; if a max weight is known, how many boxes can be stacked?)
+10. UVa 11341 - Term Strategy (s: id, h learned, h left; t: learn module ‘id’ by 1 hour or skip)
+    11. UVa 11566 - Let’s Yum Cha * (English reading problem, actually just a knapsack variant: double each dim sum and add one parameter to check if we have bought too many dishes)
+12. UVa 11658 - Best Coalition (s: id, share; t: form/ignore coalition with id)
+
+
+• Coin Change (CC)
+
+1. UVa 00147 - Dollars (similar to UVa 357 and UVa 674)
+2. UVa 00166 - Making Change (two coin change variants in one problem)
+    3. UVa 00357 - Let Me Count The Ways * (similar to UVa 147/674)
+4. UVa 00674 - Coin Change (discussed in this section with sample source code)
+    5. UVa 10306 - e-Coins * (variant: each coin has two components)
+6. UVa 10313 - Pay the Price (modified coin change + DP 1D range sum)
+7. UVa 11137 - Ingenuous Cubrency (use long long)
+    8. UVa 11517 - Exact Change * (a variation to the coin change problem)
+
+
+• Traveling Salesman Problem (TSP)
+
+    1. UVa 00216 - Getting in Line * (TSP, still solvable with backtracking)
+    2. UVa 10496 - Collecting Beepers * (discussed in this section with sample source code; actually, since n ≤ 11, this problem is still solvable with recursive backtracking and sufficient pruning)
+    3. UVa 11284 - Shopping Trip * (requires shortest paths pre-processing; TSP variant where we can go home early; we just need to tweak the DP TSP recurrence a bit: at each state, we have one more option: go home early)
+See more examples in Section 8.4.3 and Section 9.2.
+
+
+• Non Classical (The Easier Ones)
+
+1. UVa 00116 - Unidirectional TSP (similar to UVa 10337)
+2. UVa 00196 - Spreadsheet (notice that the dependencies of cells are acyclic; we can therefore memoize the direct (or indirect) value of each cell)
+3. UVa 01261 - String Popping (LA 4844, Daejeon10, a simple backtracking problem; but we use a set<string> to prevent the same state (a substring) from being checked twice)
+4. UVa 10003 - Cutting Sticks (discussed in details in this section with sample source code)
+5. UVa 10036 - Divisibility (must use offset technique as value can be negative)
+6. UVa 10086 - Test the Rods (s: idx, rem1, rem2; which site that we are now, up to 30 sites; remaining rods to be tested at NCPC; and remaining rods to be tested at BCEW; t: for each site, we split the rods, x rods to be tested at NCPC and m[i] − x rods to be tested at BCEW; print the solution)
+    7. UVa 10337 - Flight Planner * (DP; shortest paths on DAG)
+8. UVa 10400 - Game Show Math (backtracking with clever pruning is sufficient)
+9. UVa 10446 - The Marriage Interview (edit the given recursive function a bit, add memoization)
+10. UVa 10465 - Homer Simpson (one dimensional DP table)
+11. UVa 10520 - Determine it (just write the given formula as a top-down DP with memoization)
+12. UVa 10688 - The Poor Giant (note that the sample in the problem description is a bit wrong, it should be: 1+(1+3)+(1+3)+(1+3) = 1+4+4+4 = 13, beating 14; otherwise a simple DP)
+    13. UVa 10721 - Bar Codes * (s: n, k; t: try all from 1 to m)
+14. UVa 10910 - Mark’s Distribution (two dimensional DP table)
+15. UVa 10912 - Simple Minded Hashing (s: len, last, sum; t: try next char)
+    16. UVa 10943 - How do you add? * (discussed in this section with sample source code; s: n, k; t: try all the possible splitting points; alternative solution is to use the closed form mathematical formula: C(n + k − 1, k − 1) which also needs DP, see Section 5.4)
+17. UVa 10980 - Lowest Price in Town (simple)
+18. UVa 11026 - A Grouping Problem (DP, similar idea with binomial theorem in Section 5.4)
+19. UVa 11407 - Squares (can be memoized)
+20. UVa 11420 - Chest of Drawers (s: prev, id, numlck; lock/unlock this chest)
+21. UVa 11450 - Wedding Shopping (discussed in details in this section with sample source code)
+22. UVa 11703 - sqrt log sin (can be memoized)
+
+
+• Other Classical DP Problems in this Book
+
+1. Floyd Warshall’s for All-Pairs Shortest Paths problem (see Section 4.5)
+2. String Alignment (Edit Distance) (see Section 6.5)
+3. Longest Common Subsequence (see Section 6.5)
+4. Matrix Chain Multiplication (see Section 9.20)
+5. Max (Weighted) Independent Set (on tree, see Section 9.22)
+
+
+• Also see Section 4.7.1, 5.4, 5.6, 6.5, 8.3, 8.4 and parts of Chapter 9 for more programming exercises related to Dynamic Programming.
