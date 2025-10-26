@@ -1,7 +1,0 @@
-git config --list
-git config --global user.name "gatilhoroxo"
-git config --global user.email "gatilhoroxo@gmail.com"
-mkdir Dev && cd Dev 
-git clone https://github.com/gatilhoroxo/competitive_programming_attempt.git
-mv competitive_programming_attempt/ cp_attempt/
-code cp_attempt/
