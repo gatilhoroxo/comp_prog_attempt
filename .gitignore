@@ -41,10 +41,12 @@
 
 #vscode
 *.vscode
+
 #inout
 in 
 out
 exe
+
 #alfabeto
 a
 b
@@ -72,3 +74,6 @@ w
 x 
 y 
 z 
+
+#help files
+*_help.*
