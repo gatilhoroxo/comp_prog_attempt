@@ -253,3 +253,101 @@ void call_tarjan(){
     GraphAlgorithms G(adj);
     G.runTarjan();
 }
+
+// ========================= mst ==========================
+
+
+class UnionFind {
+private: vi p, rank;
+public:
+    UnionFind(int N) {
+        rank.assign(N, 0);
+        p.assign(N, 0);
+        for(int i=0; i<N; i++) {
+            p[i] = i;
+        }
+    }
+
+    int findSet(int i) {
+        return (p[i] == i) ? i : (p[i] = findSet(p[i])); 
+    }
+
+    bool isSameSet(int i, int j) {
+        return findSet(i) == findSet(j);
+    }
+
+    void unionSet(int i, int j) {
+        if(!isSameSet(i, j)){
+            int x = findSet(i), y = findSet(j);
+            if(rank[x] > rank[y]) {
+                p[y] = x;
+            } else {
+                p[x] = y;
+                if(rank[x] == rank[y]) {
+                    rank[y]++;
+                }
+            }
+        }
+    }
+};
+
+struct mst{
+    vector<pair<int, ii>> edgelist;
+    vvii adjl;
+    int e, n;
+    vi taken;
+    priority_queue<ii> pq;
+    mst(vector<pair<int, ii>> edgelist_, int n_) : edgelist(edgelist_), e(edgelist_.size()), n(n_) {
+        taken.assign(n, UNVISITED);
+    }
+
+    bool cmp(pair<int, ii> a, pair<int, ii> b){
+        return (a.first < b.first);
+    }
+
+    int kruskal(){
+        int cost=0;
+        UnionFind uf(n);
+        for(int i=0; i<edgelist.size(); i++){
+            pair<int, ii> front = edgelist[i];
+            if(!uf.isSameSet(front.second.first, front.second.second)) {
+                cost += front.first;
+                uf.unionSet(front.second.first, front.second.second);
+            }
+        }
+        return cost;
+    }
+
+    void prim(int vtx){
+        taken[vtx] = 1; 
+        for(int j=0; j< adjl[vtx].size(); j++){
+            ii v = adjl[vtx][j];
+            if(taken[v.first] == UNVISITED){
+                pq.push(ii(-v.second, -v.first));
+            }
+        }
+    }
+
+    int callprim(){
+        taken.assign(n, UNVISITED);
+        prim(0);
+        int cost = 0;
+        while(!pq.empty()) {
+            ii front = pq.top(); pq.pop();
+            int u = -front.second, w = -front.first;
+            if(!taken[u]){
+                cost += w; 
+                prim(u);
+            }
+        }
+        return cost;
+    }
+    
+    void call_mst_k(){
+        sort(edgelist.begin(), edgelist.end(), cmp);
+        int cost = kruskal();
+    }
+};
+
+
+
