@@ -1,5 +1,4 @@
 //Dominator
-//nao sei pq esta dando wrong answer
 #include <bits/stdc++.h>
 using namespace std;
 using ll = long long;
@@ -20,19 +19,19 @@ void dfs(vb& vt, vvi& adj, int u){
 }
 
 void dom(vvi& vt, vbb& ans){
-    dfs(ans[0], vt, 0);
+    vb orig(vt.size(), UNVISITED);
+    dfs(orig, vt, 0);
+
     for(int i=0; i<vt.size(); i++){
         vb reach(vt.size(), UNVISITED);
-        
-        //tira i
-        auto buff = vt[i];
-        for(auto&i:vt[i]) i = 0;
-        dfs(reach, vt, 0);
-        vt[i] = buff;
 
-        for(int j=0; j<vt[i].size(); j++){
-            if(i==j) ans[i][j] = true;
-            else ans[i][j] = (!reach[j] && ans[0][j]);
+        reach[i] = VISITED;
+        if(i != 0) dfs(reach, vt, 0);
+
+        for(int j=0; j<vt.size(); j++){
+            if(!orig[j]) ans[i][j] = false;  
+            else if(i == j) ans[i][j] = true; 
+            else ans[i][j] = (!reach[j]);  
         }
     }
 }
