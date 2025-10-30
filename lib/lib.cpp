@@ -99,6 +99,7 @@ public:
     }
 };
 
+
 class DSU {
 private: vi p, rank;
 public:
@@ -131,7 +132,6 @@ public:
             }
         }
     }
-    
 };
 
 }

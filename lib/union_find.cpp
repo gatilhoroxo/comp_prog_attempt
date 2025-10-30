@@ -1,7 +1,7 @@
 #include "defines.hpp"
-#include "lib.hpp"
 
-class lib::UnionFind {
+
+class UnionFind {
 private: vi p, rank;
 public:
     UnionFind(int N) {

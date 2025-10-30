@@ -18,8 +18,8 @@ int knap(int w, vi wt, vi& val, int n){
     return K[n][w];
 }
 
-int knapsack(int W, vector<int> &wt, vector<int> &val, int n) {
-    vector<vector<int>> dp(n + 1, vector<int>(W + 1, 0));
+int knapsack(int W, vi &wt, vi &val, int n) {
+    vector<vi> dp(n + 1, vi(W + 1, 0));
 
     for (int i = 1; i <= n; i++) {
         for (int w = 1; w <= W; w++) {

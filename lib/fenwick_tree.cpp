@@ -1,7 +1,6 @@
 #include <defines.hpp>
-#include <lib.hpp>
 
-class lib::FenwickTree {
+class FenwickTree {
 private: 
     vi ft;
     int LSOne(int i) { return (i & (-i)); }
