@@ -6,6 +6,7 @@ using vvi = vector<vi>;
 using vii = vector<ii>;
 using vvii = vector<vii>;
 
+#define INFINY 15 << 27
 
 #define VISITED 1
 #define UNVISITED 0
@@ -349,5 +350,103 @@ struct mst{
     }
 };
 
+// ==================== menor caminho ======================
+struct priority{
+    int v, w, peso;
+
+    priority(){ v=0; w=0; peso=INFINY; }
+    priority(int v1, int w1, int p){ v=v1; w=w1; peso=p; }
+
+    //ver como se comporta
+    bool operator<(const priority& other) const {
+        return peso > other.peso;
+    }
+};
+
+
+struct node {
+    int id;
+    int wt;
+    node(){
+        id=0;
+        wt=0;
+    }
+    node(int c, int w){
+        id = c;
+        wt = w;
+    }
+};
+
+class smallpath{
+private:
+    vector<vector<node>> lista;
+    vi distancias;
+    vector<node> predecessores;
+    vector<bool> mark;
+    priority_queue<priority> heap;
+    int n;
+
+    void predijkstra(){
+        for(int i=0; i<n; i++){
+            distancias[i] = INFINY;
+            predecessores[i].id = -1;
+            setMark(i, UNVISITED);
+        }
+    }
+    void setMark(int v, bool val) {
+        mark[v] = val;
+    }
+    bool getMark(int v) {
+        return mark[v];
+    }
+    int weight(int v, int w){
+        for(auto it: lista[v])
+            if(it.id == w) return it.wt;
+        return 0;
+    }
+
+public:
+    //TODO rever implementação de dijkstra 
+    void dijkstra(int s){
+        predijkstra();
+        heap.push(priority(s,s,0));
+        distancias[s] = 0;
+        for(int i=0; i<n; i++){
+            priority temp;
+            do{
+                //pode dar problema ??
+                if(!heap.empty()) {
+                    temp = heap.top();
+                    heap.pop();
+                }
+                if(temp.v == 0 && temp.w == 0 && temp.peso == INFINY && heap.empty()) return;
+            } while(getMark(temp.v) != UNVISITED);
+            setMark(temp.v, VISITED); predecessores[temp.v].id = temp.w;
+            for(auto it: lista[temp.v]){
+                int w = it.id;
+                if(getMark(w) != VISITED && distancias[w] > distancias[temp.v] + weight(temp.v,w)) {
+                    distancias[w] = distancias[temp.v] + weight(temp.v, w);
+                    heap.push(priority(temp.v, w, distancias[w]));
+                }
+            }
+        }
+    }
+
+    void Floyd_Warshall(int** D){
+        for(int i=0; i< n; i++)
+            for(int j=0; j<n; j++){
+                if(i=j) D[i][j] = 0;
+                else if(weight(i, j) != 0) D[i][j] = weight(i, j);
+                else D[i][j] = INFINY;
+            }
+
+        for(int k=0; k<n; k++)
+            for(int i=0; i<n; i++)
+                for(int j=0; j<n; j++)
+                    if(D[i][k] != INFINY && D[k][j] != INFINY && D[i][j] > D[i][k] + D[k][j])
+                        D[i][j] = D[i][k] + D[k][j];
+    }
+
+};
 
 
