@@ -11,16 +11,19 @@ using ll = long long;
 using ull = unsigned long long;
 using ld = long double;
 
+#define vec(n) vector<n>
 using vi = vector<int>;
 using vll = vector<ll>;
 using vii = vector<ii>;
 using vvi = vector<vi>;
 using vvii = vector<vii>;
+using mii = map<int,int>;
 
 // ==================== Constantes úteis ====================
 const int INF = 1e9 + 7;
 const ll LINF = 1e18;
 const int MAXN = 1e5 + 5;
+#define MAX 1'000'000'000
 
 // ==================== Defines para DFS/BFS ====================
 #define VISITED 1
@@ -41,4 +44,4 @@ const int MAXN = 1e5 + 5;
 #define rep(i, a, b) for(int i = a; i < (b); ++i)
 #define per(i, a, b) for(int i = (b) - 1; i >= a; --i)
 
-#endif // CP_LIB_HPP
+#endif CP_LIB_HPP
