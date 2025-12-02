@@ -1,0 +1,39 @@
+In the kingdom of Quadradonia, the king wants to review the prices of flights. For this purpose, he asked his accountant for a table with proposals for new prices.
+
+However, the king studied at the Institute of Computing and Programming of Chapecó (ICPC) and has sufficient knowledge to demand coherence in the table. The table is considered coherent if no multi-stop route is cheaper than a direct flight.
+
+Once the coherence of the table has been verified, the king would like to decrease the number of direct flights, without increasing the costs of the trips.
+
+Your problem is to verify the coherence of the table and, if it is coherent, inform the king how many direct flights can be eliminated without increasing the cost of any trip.
+
+Input
+The first line of input contains an integer N (1≤N≤100), the number of cities in Quadradonia served by flights. Following there are N more lines, L_1, L_2, …, L_N. Line L_i contains N integers, C_i1, C_i2, …, C_iN, where C_ij is the cost of the direct flight between cities i and j.
+
+The cost for an outbound and a return flight between two cities is always the same, meaning C_ij = C_ji for all pairs i,j where 1≤i≤N and 1≤j≤N. When i=j,C_ij =0. When i!=j, 1≤ C_ij ≤10^3
+.
+
+Output
+Print a single line containing an integer. If the table is incoherent, the integer should be -1. If the table is coherent, the integer should be equal to the maximum number of direct flights that can be removed without increasing the costs of the trips for the passengers.
+
+Examples
+Inputcopy
+3
+0 1 2
+1 0 1
+2 1 0
+Outputcopy
+1
+Inputcopy
+3
+0 2 2
+2 0 2
+2 2 0
+Outputcopy
+0
+Inputcopy	
+3
+0 2 9
+2 0 2
+9 2 0
+Outputcopy
+-1
