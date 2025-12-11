@@ -58,8 +58,16 @@ bool angleCmp(point a, point b) {
     return (atan2(d1y,d1x) - atan2(d2y,d2x)) < 0; //compare two angles
 }
 
+bool angleCmpReverse(point a, point b) {
+    if(collinear(pivot, a, b))
+        return dist(pivot,a) > dist(pivot,b);
+    long double d1x = a.x - pivot.x, d1y = a.y - pivot.y;
+    long double d2x = b.x - pivot.x, d2y = b.y - pivot.y;
+    return (atan2(d1y,d1x) - atan2(d2y,d2x)) < 0;
+}
 
-vector<point> CH(vector<point> P){
+
+vector<point> CH(vector<point>& P){
     ll i,j,n = (ll)P.size();
     //special case, the CH is P itself
     if(n <= 3) {
@@ -79,7 +87,13 @@ vector<point> CH(vector<point> P){
     P[P0] = temp;
 
     pivot = P[0];
-    sort(++P.begin(),P.end(),angleCmp);
+    sort(P.begin()+1,P.end(),angleCmp);
+    
+    
+    i = n-1;
+    while(i >= 0 && collinear(P[0], P[n-1], P[i])) i--;
+    reverse(P.begin() + i + 1, P.end());
+    
 
     vector<point> S;
     S.push_back(P[0]);
@@ -88,11 +102,10 @@ vector<point> CH(vector<point> P){
     i=2;
     while(i<n){
         j = (int)S.size() -1;
-        if(ccw(S[j-1],S[j],P[i])) 
+        if(S.size() < 2 || ccw(S[j-1],S[j],P[i])) 
             S.push_back(P[i++]);
         else S.pop_back();
     }
-    S.push_back(P[0]); // fecha o hull
     return S;
 }
 
@@ -113,8 +126,11 @@ int main(){
 
     vec(point) ans = CH(vt);
 
-    cout << ans.size()-1<< '\n';
-    for(int i=0; i<(int)ans.size()-1; i++){
+    if(ans.size() > 1 && ans[0] == ans[ans.size()-1])
+        ans.pop_back();
+
+    cout << ans.size() << '\n';
+    for(int i=0; i<(int)ans.size(); i++){
         cout << (ll)ans[i].x << ' ' << (ll)ans[i].y << '\n';
     }
 

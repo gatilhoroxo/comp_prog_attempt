@@ -79,4 +79,6 @@ z
 solucoes/
 *_help.*
 test.cpp
-
+*.c*.in
+*.c*.out
+*.c*.pout
