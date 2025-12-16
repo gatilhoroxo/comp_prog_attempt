@@ -1,5 +1,6 @@
 //travei nesse
 //queria usar a list para poder resolver
+//take abc //ok
 #include <bits/stdc++.h>
 using namespace std;
 
