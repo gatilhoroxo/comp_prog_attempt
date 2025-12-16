@@ -1,0 +1,148 @@
+Satyam is given 
+n
+n distinct points on the 2D coordinate plane. It is guaranteed that 
+0
+≤
+y
+i
+≤
+1
+0≤y 
+i
+​
+ ≤1 for all given points 
+(
+x
+i
+,
+y
+i
+)
+(x 
+i
+​
+ ,y 
+i
+​
+ ). How many different nondegenerate right triangles
+∗
+∗
+  can be formed from choosing three different points as its vertices?
+
+Two triangles 
+a
+a and 
+b
+b are different if there is a point 
+v
+v such that 
+v
+v is a vertex of 
+a
+a but not a vertex of 
+b
+b.
+
+∗
+∗
+ A nondegenerate right triangle has positive area and an interior 
+90
+∘
+90 
+∘
+  angle.
+
+Input
+The first line contains an integer 
+t
+t (
+1
+≤
+t
+≤
+10
+4
+1≤t≤10 
+4
+ ) — the number of test cases.
+
+The first line of each test case contains an integer 
+n
+n (
+3
+≤
+n
+≤
+2
+⋅
+10
+5
+3≤n≤2⋅10 
+5
+ ) — the number of points.
+
+The following 
+n
+n lines contain two integers 
+x
+i
+x 
+i
+​
+  and 
+y
+i
+y 
+i
+​
+  (
+0
+≤
+x
+i
+≤
+n
+0≤x 
+i
+​
+ ≤n, 
+0
+≤
+y
+i
+≤
+1
+0≤y 
+i
+​
+ ≤1) — the 
+i
+i'th point that Satyam can choose from. It is guaranteed that all 
+(
+x
+i
+,
+y
+i
+)
+(x 
+i
+​
+ ,y 
+i
+​
+ ) are pairwise distinct.
+
+It is guaranteed that the sum of 
+n
+n over all test cases does not exceed 
+2
+⋅
+10
+5
+2⋅10 
+5
+ .
+
+Output
+Output an integer for each test case, the number of distinct nondegenerate right triangles that can be formed from choosing three points.
