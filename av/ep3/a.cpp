@@ -1,3 +1,4 @@
+//dynamic range minimum queries
 #include <bits/stdc++.h> //ok
 using namespace std;
 #define vi vector<int>

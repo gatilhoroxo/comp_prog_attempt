@@ -1,3 +1,4 @@
+//greetings
 //entendi mas não sei por onde começar
 #include <bits/stdc++.h>
 using namespace std;

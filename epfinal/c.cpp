@@ -1,31 +1,35 @@
-//road construction
-//nao entendi o problema
+//DSU
 #include <bits/stdc++.h>
 using namespace std;
-using vi = vector<int>;
-//#define ll long long
 
-class DSU {
-private: vi p, rank;
+#define ll long long
+#define vi vector<int>
+
+class UnionFind {
+private: 
+    vi p, rank;
+    int numSets;
+    
 public:
-    DSU(int N) {
+    UnionFind(int N) {
         rank.assign(N, 0);
         p.assign(N, 0);
-        for(int i=0; i<N; i++) {
+        numSets = N; 
+        for(int i = 0; i < N; i++) {
             p[i] = i;
         }
     }
-
+ 
     int findSet(int i) {
         return (p[i] == i) ? i : (p[i] = findSet(p[i])); 
     }
-
+ 
     bool isSameSet(int i, int j) {
         return findSet(i) == findSet(j);
     }
-
+ 
     void unionSet(int i, int j) {
-        if(!isSameSet(i, j)){
+        if(!isSameSet(i, j)) {
             int x = findSet(i), y = findSet(j);
             if(rank[x] > rank[y]) {
                 p[y] = x;
@@ -35,27 +39,43 @@ public:
                     rank[y]++;
                 }
             }
+            numSets--;
         }
     }
     
+    int countSets() {
+        return numSets;
+    }
 };
-
-
+ 
 int main(){
     ios_base::sync_with_stdio(0);
     cin.tie(0);
+ 
+    //int t; cin >> t; while(t--)
+    {
 
-    int n, m;  
+    int n, m;
     cin >> n >> m;
-    vector<int> vt(n);
-    for(int i=0; i<n; i++) vt[i] = i+1;
     
+    UnionFind dsu(n+1);
     
-    while(m--){
-        int a, b;
-        cin >> a >> b;
-        int numComp, sizeCompGG;
-
+    for(int i=0; i<m; i++) {
+        int x, y;
+        cin >> x >> y;
+        dsu.unionSet(x, y);
+    }
+    
+    int compon = 0;
+    for(int i=1; i<=n; i++) {
+        if(dsu.findSet(i) == i) {
+            compon++;
+        }
+    }
+    
+    ll ans = 1LL << (n - compon); 
+    cout << ans << '\n';
+ 
     }
 
     return 0;
